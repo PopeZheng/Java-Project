@@ -1,0 +1,19 @@
+import java.util.*;
+public class HelloWorldGraphics {
+	public static void main(String[] args) 
+	{
+		int a,b,r;
+		System.out.println("Please input two number to get their greatest common divisor");
+		Scanner sc = new Scanner(System.in);
+		a=sc.nextInt();
+		b=sc.nextInt();
+		sc.close();
+		do
+		{
+			r=a%b;
+			a=b;
+			b=r;
+		}while(r!=0);
+		System.out.println("Their greatest common divisor is "+a);
+	}
+}
