@@ -16,7 +16,8 @@ public class HelloWorldGraphics {
 		}
 		else
 		{
-			for (i=2;i<a;i++)
+		        int k = (int) Math.sqrt(a);
+			for (i=2;i<=k;i++)
 			{
 				if (a%i==0) 
 				{
