@@ -1,0 +1,42 @@
+import java.util.*;
+public class HelloWorldGraphics {
+	public static void main(String[] args) 
+	{
+		int a,leap=3,i;
+		System.out.println("Please input a number to definte if it is prime");
+		Scanner sc = new Scanner(System.in);
+		a=sc.nextInt();
+		if (a<=1)
+		{
+			leap=0;
+		}
+		else if (a==2)
+		{
+			leap=1;
+		}
+		else
+		{
+			for (i=2;i<a;i++)
+			{
+				if (a%i==0) 
+				{
+					leap=0;
+				}
+				else
+				{
+					;
+				}
+			}
+		}
+		if(leap==0)
+		{
+			System.out.println("The number is not prime");
+		}
+		else 
+		{
+			System.out.println("The number is prime");
+		}
+			
+		
+	}
+}
