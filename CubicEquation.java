@@ -1,5 +1,5 @@
 import java.util.*;
-public class HelloWorldGraphics {
+public class CubicEquation {
 
 	public static void main(String[] args) 
 	{
