@@ -1,0 +1,95 @@
+import java.util.*;
+
+class OriginalCircle
+{
+	double x,y,radius;
+	public void getCoordinate(double posX,double posY)
+	{
+		x=posX;
+		y=posY;
+		System.out.println("Coordinate:("+x+","+y+")");
+	}
+	public void getRadius(double radius)
+	{
+		this.radius=radius;
+		 System.out.println("Radius:"+radius);
+	}
+	public double getArea(double radius)
+	{
+		double area;
+		this.radius=radius;
+		final double pi=3.14;
+		area=pi*radius*radius;
+		return area;
+	}
+}
+
+class CircleTran
+{
+	double x,y,radius;
+	void moveTo(double posX,double posY)
+	{
+		x=posX;
+		y=posY;
+		System.out.println("New coordinate:("+posX+","+posY+")");
+	}
+	void enlagre(double radius,int n)
+	{
+		this.radius=radius;
+		radius=n*radius;
+		System.out.println("Radius:"+radius);
+	}
+	double area(double radius)
+	{
+		this.radius=radius;
+		double area;
+		final double pi=3.141;
+		area=pi*radius*radius;
+		return area;
+	}
+}
+
+public class Circle {
+	static double x,y,radius,area;
+	static char response;
+	static int n;
+	public static void main(String[] args) 
+	{
+		System.out.println("Please definate a circle");
+		Scanner sc= new Scanner(System.in);
+		System.out.print("x-coordinate:");
+		x=sc.nextDouble();
+		System.out.print("y-coordinate:");
+		y=sc.nextDouble();
+		System.out.print("radius:");
+		radius=sc.nextDouble();
+		OriginalCircle ori= new OriginalCircle();
+		System.out.println("Your original circle:");
+		ori.getCoordinate(x, y);
+		ori.getRadius(radius);
+		area=ori.getArea(radius);
+		System.out.println("Area:"+area);
+		System.out.print("Do you want to change it?(y/n)");
+		response=sc.next().charAt(0);
+		if (response=='y')
+		{
+			do {
+			System.out.println("Where do you want to move?");
+			System.out.print("x-coordinate:");
+			x=sc.nextDouble();
+			System.out.print("y-coordinate:");
+			y=sc.nextDouble();
+			System.out.print("How many times dou you want to enlagre?(Base on the original circle) ");
+			n=sc.nextInt();
+			CircleTran newcircle=new CircleTran();
+			newcircle.moveTo(x, y);
+			newcircle.enlagre(radius,n);
+			area=newcircle.area(n*radius);
+			System.out.println("new area:"+area);
+			System.out.print("Do you want to change it again?(y/n)");
+			response=sc.next().charAt(0);
+			}while(response=='y');
+			
+		}
+	}
+}
