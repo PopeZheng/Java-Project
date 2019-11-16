@@ -1,0 +1,35 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int L,M,x,y,i,j;
+		L=sc.nextInt();
+		M=sc.nextInt();
+		int [] list1=new int[L+1];
+		int [] list2=new int[2*M];
+		for(i=0;i<=L;i++) {
+			list1[i]=1;
+		}
+		for(j=1;j<=M;j++) {
+			x=sc.nextInt();
+			y=sc.nextInt();
+			list2[2*j-2]=x;
+			list2[2*j-1]=y;
+			}	
+		sc.close();
+		int m ,n;
+		for(m=1;m<=M;m++) {
+			for(n=list2[2*m-2];n<=list2[2*m-1];n++) {
+				list1[n]=0;
+			}
+		}
+		int k,q=0;
+		for(k=0;k<=L;k++) {
+			if(list1[k]==1) {
+				q++;
+			}
+		}
+		System.out.println(q);
+
+	}
+}
